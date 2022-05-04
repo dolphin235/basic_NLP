@@ -1,11 +1,11 @@
 
-feature_char = ['<', '>', ';', ':', '=', '==', '#']
+feature_char = ['<', '>', ';', ':', '=', '==', '#', '$', '|', '.sh', '.py', '-', '+']
 
 def include_program_language(text) -> bool:
     '''
     Check whether a programming language such as C, JAVA ... is included in the text.
     1. checks special characters that are often used in programming languages.
-        Warning if 1 is found, Positive if 2 is found.
+        Warning if 1 is found, Positive if more than 2 is found.
     (If there is a better way, you can add it or recommend it.)
     '''
     cnt = 0
@@ -19,3 +19,6 @@ def include_program_language(text) -> bool:
     
     if cnt > 1:
         return True
+
+    return False
+    
